@@ -1,5 +1,9 @@
 //Function declaration that takes the student marks as an argument, stored in the studentMarks parameter
+const marks = prompt("Please Enter the Student's Marks Between 0 and 100", 0);
+
 function generateGrade(studentMarks) {
+  // Converting the marks input to a number
+  studentMarks = +studentMarks;
   //Initializing the grade that will be dynamically set depending on the marks input
   let grade;
 
@@ -14,7 +18,11 @@ function generateGrade(studentMarks) {
     grade = "D";
   } else if (studentMarks < 40 && studentMarks >= 0) {
     grade = "E";
-  } else if (studentMarks < 0 || studentMarks > 100) {
+  } else if (
+    studentMarks < 0 ||
+    studentMarks > 100 ||
+    typeof studentMarks !== "number"
+  ) {
     grade = "Error: Input student marks between 0 and 100";
   }
   // console.log(`Student's grade: ${grade}`);
@@ -23,4 +31,4 @@ function generateGrade(studentMarks) {
 }
 
 //As you call the function, input the student marks as a number between 0(minimum) and 100(maximum)
-generateGrade(88);
+console.log(generateGrade(marks));

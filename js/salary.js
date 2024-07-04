@@ -1,8 +1,16 @@
-//Function declaration that takes the speed of a car as an argument
+//Capturing the basic salary and benefits as user inputs
+const basicSalaryInput = prompt("Please Enter Your Basic Salary", 0);
+const benefitsInput = prompt("Please Enter Your Total Benefits", 0);
 
 function netSalaryCalculator(basicSalary, benefits) {
-  //Calculating gross salary
-  const grossSalary = basicSalary + benefits;
+  // Converting the basic salary and benefits inputs to numbers
+  basicSalary = parseInt(basicSalary);
+  benefits = parseInt(benefits);
+
+  // Calculating the gross salary by adding up basic salary and benefits
+  grossSalary = basicSalary + benefits;
+  // console.log(grossSalary);
+
   //Declaring the paye variable
   let paye;
   //Declaring the nhif variable
@@ -60,10 +68,10 @@ function netSalaryCalculator(basicSalary, benefits) {
   } else if (grossSalary >= 100000) {
     nhif = 1700;
   }
-  // console.log(nhif);
   const netSalary = grossSalary - paye - nhif - nssf;
-  // console.log(netSalary);
+
+  console.log(netSalary);
   return netSalary;
 }
 
-netSalaryCalculator(50000, 1200);
+netSalaryCalculator(basicSalaryInput, benefitsInput);

@@ -1,5 +1,6 @@
 //Speed limit stored in a variable
 const speedLimit = 70;
+const speed = prompt("Please Enter The Car Speed", 0);
 
 //Function declaration that takes the speed of a car as an argument
 function speedDetector(carSpeed) {
@@ -14,7 +15,7 @@ function speedDetector(carSpeed) {
 
   //1. If car speed input is less than zero, return immediately and do nothing
   if (carSpeed < 0) {
-    return;
+    console.log("Enter Valid Car Speed");
 
     //2. If the car speed is less than the speed limit, print string 'Ok'
   } else if (carSpeed <= 70) {
@@ -35,4 +36,4 @@ function speedDetector(carSpeed) {
 }
 
 //Function call to  test out our program with argument passed in
-speedDetector(130);
+speedDetector(speed);
